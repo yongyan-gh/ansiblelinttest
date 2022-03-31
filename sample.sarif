@@ -12,7 +12,7 @@
             {
               "id": "no-changed-when",
               "name": "no-changed-when",
-              "fullDescription": {
+              "shortDescription": {
                 "text": "Commands should not change things if nothing needs doing."
               },
               "defaultConfiguration": {
@@ -31,7 +31,7 @@
             {
               "id": "var-spacing",
               "name": "var-spacing",
-              "fullDescription": {
+              "shortDescription": {
                 "text": "Variables should have spaces before and after: { var_name }."
               },
               "defaultConfiguration": {
@@ -49,7 +49,7 @@
             {
               "id": "command-instead-of-module",
               "name": "command-instead-of-module",
-              "fullDescription": {
+              "shortDescription": {
                 "text": "git used in place of git module"
               },
               "defaultConfiguration": {
@@ -68,7 +68,7 @@
             {
               "id": "package-latest",
               "name": "package-latest",
-              "fullDescription": {
+              "shortDescription": {
                 "text": "Package installs should not use latest."
               },
               "defaultConfiguration": {
@@ -86,7 +86,7 @@
             {
               "id": "unnamed-task",
               "name": "unnamed-task",
-              "fullDescription": {
+              "shortDescription": {
                 "text": "All tasks should be named."
               },
               "defaultConfiguration": {
