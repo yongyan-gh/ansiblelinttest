@@ -16,6 +16,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Run ansible-lint
+        uses: ansible-community/ansible-lint-action@main
+        with:
+          path: "examples/playbooks/example.yml"
 
       - name: Upload SARIF to GitHub
         uses: github/codeql-action/upload-sarif@v1
