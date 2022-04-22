@@ -22,6 +22,7 @@ jobs:
         uses: ansible-community/ansible-lint-action@main
         with:
           path: "examples/playbooks/example.yml"
+        continue-on-error: true
           
       - name: test output
         run: echo "${{join(steps.run_ansible_lint.outputs.*, '\n')}}"
