@@ -25,7 +25,12 @@ jobs:
           output-file: hadolint_results.sarif
           format: sarif
         continue-on-error: true
-          
+
+      - name: Upload eslint results as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: hadolint_results
+          path: hadolint_results.sarif
 
       - name: Upload SARIF to GitHub
         uses: github/codeql-action/upload-sarif@v1
