@@ -21,10 +21,13 @@ jobs:
         uses: hadolint/hadolint-action@v2.1.0
         with:
           dockerfile: Dockerfile
+          no-fail: true
+          output-file: hadolint_results.sarif
+          format: sarif
         continue-on-error: true
           
 
       - name: Upload SARIF to GitHub
         uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: sample.sarif
+          sarif_file: hadolint_results.sarif
