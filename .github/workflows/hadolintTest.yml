@@ -20,7 +20,7 @@ jobs:
       - name: Run hado-lint
         uses: hadolint/hadolint-action@v2.1.0
         with:
-          dockerfile: Dockerfile
+          dockerfile: ./
           no-fail: true
           output-file: hadolint_results.sarif
           format: sarif
