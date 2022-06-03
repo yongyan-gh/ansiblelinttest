@@ -22,7 +22,8 @@ jobs:
         uses: yongyan-gh/ansible-lint-action@main
         with:
           path: "examples/playbooks/example.yml"
-          env: GITHUB_SARIF: "ansiblelint-results.sarif"
+        env:
+          GITHUB_SARIF: "ansiblelint-results.sarif"
         continue-on-error: true
 
       - name: Upload artifact
