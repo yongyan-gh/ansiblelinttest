@@ -1,4 +1,4 @@
-name: Ansible lint test
+name: Ansible lint sarif action test
 
 on:
   workflow_dispatch:
