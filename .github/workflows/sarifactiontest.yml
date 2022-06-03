@@ -1,0 +1,36 @@
+name: Ansible lint test
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  security:
+
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+
+    runs-on: ${{ matrix.operating-system }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Run ansible-lint
+        id: run_ansible_lint
+        uses: yongyan-gh/ansible-lint-action@main
+        with:
+          path: "examples/playbooks/example.yml"
+          env: GITHUB_SARIF: "ansiblelint-results.sarif"
+        continue-on-error: true
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          path: ansiblelint-results.sarif
+          
+      - name: Upload SARIF to GitHub
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: ansiblelint-results.sarif
